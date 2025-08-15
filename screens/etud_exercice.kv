@@ -1,0 +1,16 @@
+<EtudExerciceScreen>
+    name: "etud_exercice"
+    MDBoxLayout:
+        orientation: "vertical"
+        MDTopAppBar:
+            title: "Mes Exercice & Tp"
+            left_action_items: [["arrow-left", lambda x: app.back_button7()]]
+
+        ScrollView:
+            MDBoxLayout:
+                id: exercice_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: "10dp"
+                padding: "10dp"

@@ -1,0 +1,52 @@
+<SplashScreen>:
+    name: "splash"
+    md_bg_color: app.theme_cls.primary_dark
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_color
+
+        BoxLayout:
+            orientation: "vertical"
+            padding: "20dp"
+            spacing: "20dp"
+            size_hint: None, None
+            size: "300dp", "400dp"
+            pos_hint:         MDIcon:
+            icon: "book-education"
+            theme_text_color: "Custom"
+            text_color: rgba(201, 151, 0, 0.15)
+            font_size: "200sp"
+            pos_hint: {"center_x":0.5, "center_y":0.55}
+
+            FitImage:
+                source: "assets/FB.jpg"
+                size_hint: (1, 0.7)
+                radius: [20,]
+
+            MDLabel:
+                text: "UNIVERSITE ESPOIR D'AFRIQUE"
+                font_style: "H5"
+                theme_text_color: "Custom"
+                text_color: "white"
+                bold: True
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDLabel:
+                text: "Excellence-Savoir-Innovation"
+                font_style: "Subtitle1"
+                theme_text_color: "Custom"
+                text_color: app.theme_cls.accent_color
+                italic: True
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+        MDLabel:
+            text: "© 2025 Universite espoir d'afrique"
+            theme_text_color: "Custom"
+            text_color: "lightgrey"
+            halign: "center"
+            font_style: "Caption"
+            size_hint_y: None
+            height: self.texture_size[1]

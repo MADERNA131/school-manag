@@ -1,0 +1,20 @@
+<EtudCalendScreen>
+    name: "etud_calendrier"
+    MDBoxLayout:
+        orientation: "vertical"
+        MDTopAppBar:
+            title: "Calendrier académique"
+            left_action_items: [["arrow-left", lambda x: app.back_button8()]]
+            elevation: 2
+
+        ScrollView:
+            do_scroll_x: False
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            bar_width: 0  # Cache la barre de scroll
+            MDBoxLayout:
+                id: calendrier_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: "10dp"
+                padding: "10dp"

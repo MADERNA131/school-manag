@@ -1,0 +1,40 @@
+<AdminEmploiScreen>:
+    name:"admin_emploi"
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        padding: "15dp"
+
+        MDTopAppBar:
+            title: "Gestion Emploi"
+            left_action_items: [["arrow-left", lambda x: app.back_button1()]]
+
+        MDTextField:
+            id: jour
+            hint_text: "Jour (ex: Lundi)"
+            halign: "center"
+            pos_hint: {"center_y":.70}
+
+        MDTextField:
+            id: heure
+            hint_text: "Heure (ex: 8h-10h)"
+            halign: "center"
+            pos_hint: {"center_y":.60}
+
+        MDTextField:
+            id: matiere
+            hint_text: "Matière"
+            halign: "center"
+            pos_hint: {"center_y":.50}
+
+        MDTextField:
+            id: classe
+            hint_text: "Classe (ex: Info1)"
+            halign: "center"
+            pos_hint: {"center_y":.40}
+
+        MDRaisedButton:
+            text: "Ajouter"
+            pos_hint: {"center_x": 0.5, "center_y":.30}
+            on_release:
+                root.ajouter_cours(jour.text, heure.text, matiere.text, classe.text)

@@ -1,0 +1,24 @@
+<BordereauScreen>
+    name: "paiement"
+    #on_enter: root.afficher_paiements()
+    MDBoxLayout:
+        orientation: 'vertical'
+        #on_enter: root.afficher_paiements()
+
+        MDTopAppBar:
+            title: "Historique des paiements"
+            elevation: 1
+            pos_hint: {"top": 1}
+            left_action_items: [['arrow-left', lambda x: app.back_button10()]]
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                id: historique_box
+                orientation: "vertical"
+                spacing: "10dp"
+                padding: "10dp"
+                size_hint_y: None
+                height: self.minimum_height

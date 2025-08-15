@@ -1,0 +1,71 @@
+<LoginScreen>:
+    name: "etud_login"
+    md_bg_color: "#f5f5f7"
+
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"top":1, "x":0}
+        on_release:
+            root.manager.current = "home"
+
+    FitImage:
+        source: "assets/FB.jpg"
+        opacity: 0.3
+
+    MDCard:
+        id: card
+        size_hint: .85, .7
+        pos_hint: {"center_y":.5, "center_x":.5}
+        elevation: 5
+        padding: "25dp"
+        spacing: "12dp"
+        orientation: "vertical"
+        radius: [15,]
+
+        FitImage:
+            source:"assets/FB.jpg"
+            size_hint: .9, .5
+            pos_hint: {"center_x":.5}
+
+        MDLabel:
+            text: "CONNEXION"
+            bold: True
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: "center"
+            theme_text_color: "Primary"
+
+        MDTextField:
+            id: matricule
+            hint_text: "Email"
+            icon_left: "email"
+            mode: "rectangle"
+            size_hint_x: .9
+            pos_hint: {"center_x":.5}
+            required: True
+
+        MDTextField:
+            id: password
+            hint_text: "Mot de passe"
+            icon_left: "lock"
+            mode: "rectangle"
+            password: True
+            size_hint_x: .9
+            pos_hint: {"center_x":.5}
+            required: True
+
+        MDRaisedButton:
+            text: "SE CONNECTER"
+            size_hint_x: .9
+            md_bg_color: app.theme_cls.primary_color
+            pos_hint: {"center_x":.5}
+            radius: [10, 10, 10, 10]
+            on_release: root.try_login(matricule.text, password.text)
+
+        MDTextButton:
+            text: "mot de passe oublier"
+            theme_text_color: "Hint"
+            pos_hint: {"center_x":.5}
+            on_release: root.forget_password()
+                #root.manager.transition.direction = "left"
+                #root.manager.current = "forget"

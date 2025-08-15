@@ -1,0 +1,17 @@
+<EtudSupportScreen>
+    name: "etud_support"
+    MDBoxLayout:
+        orientation: "vertical"
+        MDTopAppBar:
+            title: "Mes Supports"
+            left_action_items: [["arrow-left", lambda x: app.back_button6()]]
+
+        ScrollView:
+            do_scroll_x: False
+            MDBoxLayout:
+                id: support_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: "10dp"
+                padding: "10dp"

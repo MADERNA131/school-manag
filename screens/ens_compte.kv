@@ -1,0 +1,114 @@
+<ProfileCard@MDCard>:
+    orientation: 'vertical'
+    size_hint: None, None
+    size: "335dp", "400"
+    elevation: 2
+    radius: 15
+    padding: "20dp"
+    spacing: "15dp"
+    pos_hint: {"center_x": 0.5}
+
+<ProfCompteScreen>
+    name: "ens_compte"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: app.theme_cls.bg_normal
+
+        MDTopAppBar:
+            title: "Mon Compte"
+            elevation: 0
+            left_action_items: [['arrow-left', lambda x: app.back_button_enscom()]]
+            right_action_items: [['pencil', lambda x: app.edit_profile()]]
+            #pos_hint: {"top": 1}
+        ScrollView:
+            pos_hint: {"top": 0.90}
+            size_hint: 1, 0.92
+            do_scroll_x: False
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '25dp'
+                padding: '20dp'
+                size_hint_y: None
+                height: self.minimum_height
+
+                # Carte Profil
+                ProfileCard:
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        spacing: '20dp'
+                        size_hint_y: None
+                        height: "80dp"
+
+                        FitImage:
+                            id:profile_image
+                            source: "assets/FB.jpg"
+                            size_hint: None, None
+                            size: "100dp", "100dp"
+                            radius: [self.size[0]/2,]
+                        BoxLayout:
+                            orientation: 'vertical'
+                            spacing: '5dp'
+                            MDLabel:
+                                id: nom
+                                text: "Jean Dupont"
+                                font_style: "H6"
+                                adaptive_height: True
+                            MDLabel:
+                                id: faculte
+                                text: "Licence Informatique"
+                                font_style: "Subtitle2"
+                                theme_text_color: "Secondary"
+                                adaptive_height: True
+                    MDLabel:
+                        text: "Informations Personnelles"
+                        font_style: "Overline"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        padding: [0, '10dp', 0, '5dp']
+
+                    GridLayout:
+                        cols: 2
+                        spacing: '10dp'
+                        size_hint_y: None
+                        height: self.minimum_height
+                        row_default_height: "40dp"
+
+                        MDLabel:
+                            text: "Email:"
+                            font_style: "Body1"
+                            halign: "right"
+                        MDLabel:
+                            id: email
+                            text: "jean.dupont@univ.fr"
+                            font_style: "Body1"
+                            theme_text_color: "Primary"
+
+                        MDLabel:
+                            text: "Téléphone:"
+                            font_style: "Body1"
+                            halign: "right"
+                        MDLabel:
+                            id: telephone
+                            text: "+33 6 12 34 56 78"
+                            font_style: "Body1"
+                            theme_text_color: "Primary"
+
+                        MDLabel:
+                            text: "Matricule:"
+                            font_style: "Body1"
+                            halign: "right"
+                        MDLabel:
+                            id: matricule
+                            text: "1234567890A"
+                            font_style: "Body1"
+                            theme_text_color: "Primary"
+                # Bouton Déconnexion
+                MDRectangleFlatButton:
+                    text: "Déconnexion"
+                    icon: "logout"
+                    theme_text_color: "Error"
+                    line_color: app.theme_cls.error_color
+                    pos_hint: {"center_x": 0.5}
+                    on_release: app.logout_confirmation()

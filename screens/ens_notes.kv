@@ -1,0 +1,109 @@
+<ProfNoteScreen>
+    name: "ens_notes"
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Saisie de notes"
+            elevation: 2
+            left_action_items: [["arrow-left", lambda x: app.back_button_ensgrnt()]]
+
+        MDTextField:
+            id: search_field
+            hint_text: "Rechercher par nom ou matricule"
+            mode: "rectangle"
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+            icon_left: "magnify"
+            on_text: root.rechercher_etudiants(self.text)
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                id: etudiants_box
+                orientation: "vertical"
+                adaptive_height: True
+                padding: dp(10)
+                spacing: dp(10)
+
+        MDFillRoundFlatButton:
+            text: "Ajouter notes"
+            icon: "plus"
+            pos_hint: {"center_x": 0.5, "center_y":0.2}
+            size_hint_x: 0.9
+            on_release: app.root.current= "ajouter_note"
+
+<AjouterNoteScreen>
+    name: "ajouter_note"
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Ajouter Note"
+            left_action_items: [["arrow-left", lambda x: app.back_button_ntrt()]]
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDTextField:
+                    id: nom
+                    hint_text: "Nom"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: matricule
+                    hint_text: "Matricule"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: classe
+                    hint_text: "classe"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: faculte
+                    hint_text: "faculte"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: cours
+                    hint_text: "cours"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: note
+                    hint_text: "note"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: semestre
+                    hint_text: "semestre"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: annee
+                    hint_text: "annee"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: commentaire
+                    hint_text: "commentaire"
+                    mode: "rectangle"
+
+                MDRaisedButton:
+                    text: "Enregistrer"
+                    icon: "content-save"
+                    size_hint_x: .9
+                    pos_hint: {"center_x": 0.5}
+                    md_bg_color: app.theme_cls.primary_color
+                    on_release: root.ajouter_note()

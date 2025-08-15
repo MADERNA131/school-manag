@@ -1,0 +1,219 @@
+<ProfDashScreen>
+    name: "prof_dashboard"
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Tableau de bord"
+            elevation: 2
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: "10dp"
+                spacing: "10dp"
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "120dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current = "ens_cours"
+                        MDLabel:
+                            text: "Mes cours"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "book-open"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current = "ens_notes"
+                        MDLabel:
+                            text: "Saisie des Notes"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "clipboard-edit"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "120dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current = "ens_absences"
+                        MDLabel:
+                            text: "Absences signalées"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "alert"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current = "ens_annonces"
+                        MDLabel:
+                            text: "Annonces"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "bullhorn"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "120dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current = "ens_emploi"
+                        MDLabel:
+                            text: "Emploi du temps"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "calendar-clock"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        #on_release: app.root.current = "ens_presence"
+                        MDLabel:
+                            text: "Suivi de présence"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "chart-box"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "120dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        #on_release: app.root.current = "ens_absences"
+                        MDLabel:
+                            text: "Cours en ligne"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "alert"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        #on_release: app.root.current = "ens_annonces"
+                        MDLabel:
+                            text: "Ajouter des supports"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "bullhorn"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "120dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current = "ens_compte"
+                        MDLabel:
+                            text: "Mon compte"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "account"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.quitter_app()
+                        MDLabel:
+                            text: "Quitter"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "logout"
+                            halign: "center"
+                            font_size: "40sp"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}

@@ -1,0 +1,162 @@
+<NouveauScreen>:
+    name: "nouv_etud"
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Demander d'admission"
+            elevation: 2
+            left_action_items: [['arrow-left', lambda x: app.back_button3()]]
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDLabel:
+                    text: "Formulaire d'Inscrire"
+                    halign: "center"
+                    font_style: "H6"
+                    theme_text_color: "Primary"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    padding: dp(10)
+
+                    MDLabel:
+                        text: "Identite Complets"
+                        font_style: 'Subtitle1'
+                        #size_hint_y: None
+                        height: self.texture_size[1]
+
+                    MDTextField:
+                        id: nom
+                        hint_text: "Nom"
+                        mode: "rectangle"
+                        line_color_normal: app.theme_cls.primary_color
+
+                    MDTextField:
+                        id: prenom
+                        hint_text: "Prenom"
+                        #input_filter: "float"
+                        mode: "rectangle"
+                        line_color_normal: app.theme_cls.primary_color
+
+                    MDTextField:
+                        id: sexe
+                        hint_text: "Sexe"
+                        mode: "rectangle"
+                        line_color_normal: app.theme_cls.primary_color
+
+                    MDTextField:
+                        id: date
+                        hint_text: "JJ/MM/AAAA"
+                        mode: "rectangle"
+                        line_color_normal: app.theme_cls.primary_color
+                        helper_text: "Entrez votre date de naissance"
+                        helper_text_mode: "on_focus"
+
+                    MDTextField:
+                        id: nationalite
+                        hint_text: "Nationalite"
+                        mode: "rectangle"
+                        line_color_normal: app.theme_cls.primary_color
+
+                    MDTextField:
+                        id: adresse
+                        hint_text: "Adresse complets"
+                        mode: "rectangle"
+                        line_color_normal: app.theme_cls.primary_color
+
+                MDLabel:
+                    text: "Annee obtention & Choix"
+                    halign: "center"
+                    font_style: "Subtitle1"
+                    theme_text_color: "Primary"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    padding: dp(10)
+                    MDTextField:
+                        id: annee
+                        hint_text: "Annee d'obtention"
+                        mode: "rectangle"
+                        line_color_normal: app.theme_cls.primary_color
+                    MDTextField:
+                        id: choix
+                        hint_text: "Choix option"
+                        mode: "rectangle"
+                        icon_left: "book-open"
+                        helper_text: "Ex: MATH101"
+                        helper_text_mode: "on_focus"
+                        line_color_normal: app.theme_cls.primary_color
+
+                MDLabel:
+                    text: "Commentaire & preuve"
+                    halign: "center"
+                    font_style: "Subtitle1"
+                    theme_text_color: "Primary"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    padding: dp(10)
+                    MDTextField:
+                        id: commentaire
+                        hint_text: "Détails de votre demande..."
+                        mode: "rectangle"
+                        multiline: True
+                        max_height: "100dp"
+                        line_color_normal: app.theme_cls.primary_color
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: "48dp"
+                    #height: self.minimum_height
+                    #padding: dp(10)
+                    MDIconButton:
+                        icon: "paperclip"
+                        theme_text_color: "Hint"
+                        on_release: app.attach_file()
+
+                    MDLabel:
+                        id: file_name
+                        text: "Aucun fichier sélectionné"
+                        theme_text_color: "Hint"
+                        font_style: "Caption"
+
+                MDRaisedButton:
+                    text: "Envoyer"
+                    icon: "content-save"
+                    size_hint_x: .9
+                    pos_hint: {"center_x": 0.5}
+                    md_bg_color: app.theme_cls.primary_color
+                    on_release: root.envoyer_demander()
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    padding: dp(10)
+
+                    MDLabel:
+                        text: "Veuillez consulter votre adresse mail pendant 12h"
+                        halign: "center"
+                        font_style: "Subtitle1"
+                        theme_text_color: "Primary"

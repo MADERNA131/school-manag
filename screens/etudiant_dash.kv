@@ -1,0 +1,294 @@
+<EtudScreen>:
+    name: "etudiant_dashboard"
+    MDBoxLayout:
+        orientation: 'vertical'
+        # TopAppBar avec dots-vertical
+        MDTopAppBar:
+            id: toolbar
+            title: "Mon Espace Étudiant"
+            elevation: 1
+            #pos_hint: {"top": 1}
+            right_action_items: [["dots-vertical", lambda x: app.open_menu(x)]]
+            specific_text_color: 1, 1, 1, 1
+            height: "40dp"
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: "10dp"#"20dp"
+                spacing: "10dp"#"15dp"
+                size_hint_y: None
+                height: self.minimum_height
+
+                # Statistiques
+                MDLabel:
+                    text: "Cours | horaire | note"
+                    font_style: "Subtitle1"
+                    padding: [10, 10]
+                    size_hint_y: None
+                    bold: True
+                    height: self.texture_size[1]
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "140dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_color#app.theme_cls.primary_light
+                        on_release: app.root.current= "etud_cours"
+                        MDLabel:
+                            text: "Mes cours"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "book-open"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current= "etud_emploi"
+                        MDLabel:
+                            text: "Mes horaires"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "calendar-clock"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.accent_color#app.theme_cls.accent_light
+                        on_release: app.root.current= "etud_note"
+                        MDLabel:
+                            text: "Mes notes"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "chart-box"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+                # Statistiques
+                MDLabel:
+                    text: "calendrier | paiement | communique"
+                    font_style: "Subtitle1"
+                    padding: [10, 10]
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    bold: True
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "140dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        on_release: app.root.current= "etud_calendrier"
+                        md_bg_color: app.theme_cls.primary_color#app.theme_cls.primary_color#app.theme_cls.primary_light
+                        MDLabel:
+                            text: "Calendrier académique"
+                            font_style: "Subtitle2"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "calendar"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current= "paiement"
+                        MDLabel:
+                            text: "Mes paiements"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "cash"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.accent_color
+                        on_release: app.root.current= "etud_annonce"
+                        MDLabel:
+                            text: "Communiques"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "bullhorn"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+                # Statistiques
+                MDLabel:
+                    text: "cours | absence | supports"
+                    font_style: "Subtitle1"
+                    padding: [10, 10]
+                    bold: True
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "140dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_color
+                        #on_release: app.root.current= "etud_bibliotheque"
+                        MDLabel:
+                            text: "Cours en ligne"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "library"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.accent_light
+                        on_release: app.root.current= "absence"
+                        MDLabel:
+                            text: "Signaler une absence"
+                            font_style: "Subtitle2"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "calendar-remove"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        #on_release: app.root.current= "etud_support"
+                        MDLabel:
+                            text: "Mes supports"
+                            bold: True
+                            font_style: "Subtitle1"
+                            halign: "center"
+                        MDIcon:
+                            icon: "file-download"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+                # Statistiques
+                MDLabel:
+                    text: "camarades | reglements | presence"
+                    font_style: "Subtitle1"
+                    padding: [10, 10]
+                    bold: True
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "140dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_color#app.theme_cls.primary_light
+                        on_release: app.root.current= "mes_enseignats"
+                        MDLabel:
+                            text: "Mes camarades"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "account-group"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        on_release: app.root.current= "reglements"
+                        MDLabel:
+                            text: "Reglements d'ordre interieur"
+                            font_style: "Subtitle2"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "account-group"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.accent_color#app.theme_cls.accent_light
+                        MDLabel:
+                            text: "Suivi de présence"
+                            font_style: "Subtitle1"
+                            halign: "center"
+                            bold: True
+                        MDIcon:
+                            icon: "chart-box"
+                            halign: "center"
+                            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                            font_size: "40sp"
+                            theme_text_color: "Primary"
+

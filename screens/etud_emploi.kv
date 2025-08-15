@@ -1,0 +1,20 @@
+<EtuEmplScreen>
+    name: "etud_emploi"
+    MDBoxLayout:
+        orientation: "vertical"
+        MDTopAppBar:
+            title: "Emploi du Temps"
+            left_action_items: [["arrow-left", lambda x: app.back_button2()]]
+            elevation: 2
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                id: emploi_box
+                orientation: "vertical"
+                padding: "10dp"
+                spacing: "10dp"
+                size_hint_y: None
+                height: self.minimum_height

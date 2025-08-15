@@ -1,0 +1,21 @@
+<EtudCamScreen>
+    name: "mes_enseignats"
+    MDBoxLayout:
+        orientation: 'vertical'
+        # TopAppBar avec dots-vertical
+        MDTopAppBar:
+            id: toolbar
+            title: "Mes camarades"
+            elevation: 1
+            left_action_items: [["arrow-left", lambda x: app.back_button13()]]
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                id: camarades_box
+                orientation: "vertical"
+                padding: "10dp"
+                spacing: "10dp"
+                size_hint_y: None
+                height: self.minimum_height

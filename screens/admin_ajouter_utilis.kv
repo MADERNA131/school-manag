@@ -1,0 +1,67 @@
+<AjouterScreen>
+    name: "ajouter_utilisateur"
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Ajouter utilisateur"
+            left_action_items: [["arrow-left", lambda x: app.back_button12]]
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDTextField:
+                    id: nom
+                    hint_text: "Nom"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: matricule
+                    hint_text: "Matricule"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: mot_de_passe
+                    hint_text: "Mot de passe"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: classe
+                    hint_text: "Classe"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: faculte
+                    hint_text: "Faculte"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: email
+                    hint_text: "Email"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: telephone
+                    hint_text: "Telephone"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: role
+                    hint_text: "Role (etudiant/enseignant/admin)"
+                    mode: "rectangle"
+
+                MDRaisedButton:
+                    text: "Enregistrer"
+                    icon: "content-save"
+                    size_hint_x: .9
+                    pos_hint: {"center_x": 0.5}
+                    md_bg_color: app.theme_cls.primary_color
+                    on_release: root.ajouter_utilisateur()

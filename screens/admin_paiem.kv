@@ -1,0 +1,73 @@
+<AjoutPaiemScreen>
+    name: "ajout_paiement"
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Gestion des Paiements"
+            left_action_items: [["arrow-left", lambda x: app.back_button11]]
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+        #MDSeparator:
+
+                MDLabel:
+                    text: "Ajouter un Paiement"
+                    halign: "center"
+                    font_style: "H6"
+                    theme_text_color: "Primary"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    padding: dp(10)
+
+                    MDTextField:
+                        id: matricule
+                        hint_text: "Matricule"
+                        mode: "rectangle"
+
+                    MDTextField:
+                        id: montant
+                        hint_text: "Montant"
+                        input_filter: "float"
+                        mode: "rectangle"
+
+                    MDTextField:
+                        id: devise
+                        hint_text: "Devise (fc, usd)"
+                        mode: "rectangle"
+
+                    MDTextField:
+                        id: methode
+                        hint_text: "Méthode (Espèce, Mobile Money...)"
+                        mode: "rectangle"
+
+                    MDTextField:
+                        id: reference
+                        hint_text: "Référence (optionnel)"
+                        mode: "rectangle"
+
+                    MDTextField:
+                        id: date
+                        hint_text: "Date (2025-06-02)"
+                        mode: "rectangle"
+
+                    MDRaisedButton:
+                        text: "Enregistrer"
+                        icon: "content-save"
+                        size_hint_x: .9
+                        pos_hint: {"center_x": 0.5}
+                        md_bg_color: app.theme_cls.primary_color
+                        on_release: root.ajouter_paiement()

@@ -1,0 +1,63 @@
+<AbsenceScreen>:
+    name: "absence"
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Signaler une absence"
+            elevation: 2
+            left_action_items: [['arrow-left', lambda x: app.back_button()]]
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+                MDTextField:
+                    id: nom_field
+                    hint_text: "Entrez votre nom"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: classe_field
+                    hint_text: "Entrez votre classe"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: cours_field
+                    hint_text: "Cours concerné"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: professeur_field
+                    hint_text: "Nom du professeur"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: date_field
+                    hint_text: "Date de l'absence"
+                    mode: "rectangle"
+                    #on_focus: if self.focus: app.open_date_picker()
+
+                MDTextField:
+                    id: heure_field
+                    hint_text: "Heure ou créneau"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: motif_field
+                    hint_text: "Motif de l'absence"
+                    multiline: True
+                    max_height: "100dp"
+                    mode: "rectangle"
+
+                MDRaisedButton:
+                    text: "Envoyer"
+                    size_hint_x: 0.9
+                    pos_hint: {"center_x": 0.5}
+                    on_release: root.envoyer_absence()

@@ -1,0 +1,121 @@
+<HomeScreen>:
+    name: "home"
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_dark
+
+    MDLabel:
+        text: "BIENVENUE"
+        font_style: "H4"
+        theme_text_color: "Custom"
+        text_color: "white"
+        halign: "center"
+        pos_hint: {"center_y":0.77, "center_x":0.5}
+        bold: True
+
+    MDLabel:
+        text: "a l'"
+        italic: True
+        theme_text_color: "Custom"
+        text_color: "black"
+        halign: "center"
+        pos_hint: {"center_y":0.73, "center_x":0.5}
+        bold: True
+
+
+    MDLabel:
+        text: "UNIVERSITE ESPOIR D'AFRIQUE"
+        font_style: "H4"
+        theme_text_color: "Custom"
+        text_color: "white"
+        halign: "center"
+        pos_hint: {"center_y":0.65, "center_x":0.5}
+        bold: True
+
+    MDLabel:
+        text: "Gestion academique"
+        font_style: "Subtitle1"
+        theme_text_color: "Custom"
+        text_color: "lightgrey"
+        halign: "center"
+        pos_hint: {"center_y":0.58, "center_x":0.5}
+
+    MDLabel:
+        id: label1
+        text: "Excellence-Savoir-Innovation"
+        theme_text_color: "Custom"
+        pos_hint: {"center_y":0.54, "center_x":0.5}
+        text_color: app.theme_cls.accent_color
+        italic: True
+        halign: "center"
+        opacity: 1
+        font_size: "18sp"
+
+    #FitImage:
+        #source: "assets/FB.jpg"
+        #size_hint: (0.9, 0.3)
+        #radius: [20,]
+        #pos_hint: {"center_y":0.4, "center_x":0.5}
+
+    MDFillRoundFlatButton:
+        id: nouv_btn
+        text: "Nouveaux Etudiants"
+        size_hint: (0.7, 0.07)
+        icon: "login"
+        height: dp(50)
+        theme_text_color: "Custom"
+        text_color: "white"
+        icon_color: "white"
+        md_bg_color: app.theme_cls.accent_color
+        pos_hint: {"center_y":0.4, "center_x":0.5}
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current = "nouv_etud"
+
+
+    MDFillRoundFlatButton:
+        id: login_etd
+        text: "Se Connecter"
+        size_hint: (0.7, 0.07)
+        icon: "login"
+        height: dp(50)
+        theme_text_color: "Custom"
+        text_color: "white"
+        icon_color: "white"
+        md_bg_color: app.theme_cls.primary_light
+        pos_hint: {"center_y":0.3, "center_x":0.5}
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current = "etud_login"
+
+#    MDFillRoundFlatButton:
+#        id: enseig_btn
+#        text: "Panel Enseignants"
+#        icon: "account-plus"
+#        size_hint: (0.7, 0.07)
+#       height: dp(50)
+#        md_bg_color: app.theme_cls.accent_color
+#        pos_hint: {"center_y":0.2, "center_x":0.5}
+#        theme_text_color: "Custom"
+#        text_color: "white"
+#        icon_color: "white"
+#        on_release:
+#            root.manager.transition.direction = "right"
+#            root.manager.current = "enseig_lgn"
+
+
+#    MDFillRoundFlatButton:
+#        id: login_adm
+#        text: "Panel Administrative"
+#        icon: "account-plus"
+#        size_hint: (0.7, 0.07)
+#        height: dp(50)
+#        md_bg_color: app.theme_cls.accent_color
+#        pos_hint: {"center_y":0.1, "center_x":0.5}
+#        theme_text_color: "Custom"
+#        text_color: "white"
+#        icon_color: "white"
+#        on_release:
+#            root.manager.transition.direction = "right"
+#            root.manager.current = "admin_lgn"
+
+

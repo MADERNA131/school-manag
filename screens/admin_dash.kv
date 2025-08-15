@@ -1,0 +1,165 @@
+<AdminDashboardScreen>:
+    name: "admin_dash"
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Tableau de Bord Administrateur"
+            elevation: 2
+            left_action_items: [["arrow-left", lambda x: app.back_button9()]]
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: "20dp"
+                spacing: "15dp"
+                size_hint_y: None
+                height: self.minimum_height
+
+                # Statistiques
+                MDLabel:
+                    text: "Statistiques"
+                    font_style: "H6"
+                    padding: [10, 10]
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    spacing: "10dp"
+                    size_hint_y: None
+                    height: "140dp"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        MDLabel:
+                            text: "Enseignats"
+                            font_style: "H6"
+                            halign: "center"
+                        MDLabel:
+                            id: nb_enseignants
+                            text: "..."
+                            font_style: "H4"
+                            halign: "center"
+                            bold: True
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "16dp"
+                        size_hint: (0.5, 1)
+                        md_bg_color: app.theme_cls.primary_light
+                        MDLabel:
+                            text: "Étudiants"
+                            font_style: "H6"
+                            halign: "center"
+                        MDLabel:
+                            id: nb_etudiants
+                            text: "..."
+                            font_style: "H4"
+                            halign: "center"
+                            bold: True
+
+
+                # Gestion Utilisateurs
+                MDLabel:
+                    text: "Gestion"
+                    font_style: "H6"
+                    padding: [10, 10]
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDFillRoundFlatButton:
+                    text: "Gérer les Utilisateurs"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: app.theme_cls.primary_color
+                    on_release: app.root.current= "gestion_utilisateur"
+
+                MDFillRoundFlatButton:
+                    text: "Gérer Paiements"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: app.theme_cls.accent_color
+                    on_release: app.root.current= "ajout_paiement"
+
+                MDFillRoundFlatButton:
+                    text: "Gérer bibliothèque"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: 0.5, 0, 0.5, 1  # Violet
+
+                # Gestion Pédagogique
+                MDLabel:
+                    text: "Gestion Pédagogique"
+                    font_style: "H6"
+                    padding: [10, 10]
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDFillRoundFlatButton:
+                    text: "Publier l'emploi du temps"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: 0, 0.6, 0.3, 1  # Vert
+
+                MDFillRoundFlatButton:
+                    text: "Publier Annonces"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: 0.9, 0.5, 0, 1  # Orange
+
+                MDFillRoundFlatButton:
+                    text: "Ajouter notes"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: 0.8, 0.2, 0.2, 1  # Rouge
+
+                # Administration Système
+                MDLabel:
+                    text: "Administration"
+                    font_style: "H6"
+                    padding: [10, 10]
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDFillRoundFlatButton:
+                    text: "Paramètres du Système"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: 0.3, 0.3, 0.3, 1  # Gris foncé
+
+                MDFillRoundFlatButton:
+                    text: "Sauvegardes"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: 0, 0.4, 0.6, 1  # Bleu foncé
+
+                MDFillRoundFlatButton:
+                    text: "Journal d'Activité"
+                    size_hint: (1, None)
+                    height: "50dp"
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 4
+                    md_bg_color: 0.6, 0.4, 0, 1  # Marron

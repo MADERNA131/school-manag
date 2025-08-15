@@ -1,0 +1,65 @@
+<SuggestionCard@MDCard>:
+    orientation: 'vertical'
+    size_hint: None, None
+    size: "345dp", "450"
+    elevation: 3
+    radius: 12
+    padding: "10dp"
+    spacing: "10dp"
+
+<SuggestionScreen>:
+    name: "suggestion"
+    md_bg_color: "#f5f5f7"
+    FitImage:
+        source: "assets/FB.jpg"
+        size_hint: 1, 1
+        pos_hint: {"center_x": .5, "center_y": .5}
+        opacity: 0.5  # facultatif, pour laisser voir le contenu
+
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"top":1, "x":0}
+        on_release:
+            root.manager.current = "etud_dashboard"
+
+    MDCard:
+        size_hint: None, None
+        size: "300dp", "400dp"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 4
+        padding: "20dp"
+        spacing: "15dp"
+        BoxLayout:
+            orientation: "vertical"
+            MDLabel:
+                text: "Proposer une amélioration"
+                font_style: "H6"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDTextField:
+                id: suggestion_title
+                hint_text: "Titre de votre suggestion"
+                icon_left: "identifier"
+                mode: "rectangle"
+            MDTextField:
+                hint_text: "Proposé par: Jean D. (L2 Info)"
+                theme_text_color: "Secondary"
+                icon_left: "identifier"
+                mode: "rectangle"
+
+            MDTextField:
+                id: suggestion_content
+                hint_text: "Décrivez votre idée en détail..."
+                multiline: True
+                mode: "fill"
+                fill_color: 0, 0, 0, 0.05
+            MDSeparator
+
+            MDRaisedButton:
+                text: "Envoyer"
+                icon: "send-check"
+                pos_hint: {"center_x": 0.5}
+                on_release: app.validate_bordereau(ref_input.text, montant_input.text)
+

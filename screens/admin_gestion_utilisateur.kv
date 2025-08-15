@@ -1,0 +1,36 @@
+<GererUtilScreen>
+    name: "gestion_utilisateur"
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Gérer les Utilisateurs"
+            elevation: 2
+            left_action_items: [["arrow-left", lambda x: app.back_button9()]]
+
+        MDTextField:
+            id: search_field
+            hint_text: "Rechercher par nom ou matricule"
+            mode: "rectangle"
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+            icon_left: "magnify"
+            on_text: root.rechercher_utilisateur(self.text)
+
+        ScrollView:
+            do_scroll_x: False
+            bar_width: 0
+            effect_cls: "ScrollEffect"  # Pour le scrolling fluide
+            MDBoxLayout:
+                id: utilisateurs_box
+                orientation: "vertical"
+                adaptive_height: True
+                padding: dp(10)
+                spacing: dp(10)
+
+        MDFillRoundFlatButton:
+            text: "Ajouter utilisateur"
+            icon: "plus"
+            pos_hint: {"center_x": 0.5, "center_y":0.2}
+            size_hint_x: 0.9
+            on_release: app.root.current= "ajouter_utilisateur"
